@@ -62,13 +62,14 @@ elif answer == 'Лампочка' or 'лампочка' or 'ЛАМПОЧКА':
     print('Поздравляю! Ты решил эту загадку')
 else:
     print('Шейм он ю. Ответ знает даже ребенок. Пробуй ещё раз, не буди во мне внутреннего зверя, харёк пока спит спокойно')
+    answer +=1
 
 
 answer = input('Отгадай загадку. Маленькое беленькое на потолке висит не светит')
 while True:
     if answer.lower() == 'q':
         print('Шейм он ю. Ответ знает даже ребенок. Пробуй ещё раз, не буди во мне внутреннего зверя, харёк пока спит спокойно')
-        break
+        answer += 1
     elif answer.lower() == 'лампочка':
         print('Поздравляю! Ты решил эту загадку')
         break
@@ -165,7 +166,10 @@ a = input()
 x = a[0:2] + a[-1:-2]
 y = a*2
 z = a*0
-print (a, x, y, z, sep='\n')
+if 2 <= len(a):
+    print (a, x, y, z, sep='\n')
+else:
+    print()
 
 # Task 3
 # Write a program that has a variable with your name stored (in lowercase) and then asks for your name as input.
