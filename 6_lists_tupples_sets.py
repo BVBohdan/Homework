@@ -6,6 +6,17 @@ from random import randint
 new_list = [randint(0,100) for int in range(10)]
 max_number = max(new_list)
 print(f"Cписок: {new_list}. Максимальное число: {max_number}")
+########################################
+from random import randint
+new_list = [randint(0,100) for int in range(10)]
+i = 0
+max_number = new_list[1]
+while i < len(new_list):
+    i +=1
+    if new_list[1] > max_number:
+        max_number = new_list[1]
+    print(f"Cписок: {new_list}. Максимальное число: {max_number}")
+    break
 
 # Task 2. Exclusive common numbers.
 # Generate 2 lists with the length of 10 with random integers from 1 to 10, and make a third list containing the
