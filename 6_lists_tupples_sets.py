@@ -49,17 +49,16 @@ list_2 = []
 index = 0
 while index < len(list_1):
     index += 1
-    while (len(list_1)+1) % 7 == 0 and (len(list_1)+1) % 5 != 0:
+    while (len(list_1)) % 7 == 0 and (len(list_1)) % 5 != 0:
         list_2.append(len(list_1)+1)
 #######################################
 list_1 = []
-list_2 = []
 x = 0
 while x <= 100:
     x += 1
     if x % 5 != 0 and x % 7 == 0:
-        list_2.append(x)
-        print(list_2)
+        list_1.append(x)
+        print(list_1)
 #######################################
 
 # Task 4. Реверс. Создайте лист длинной 10 с подряд идущими значениями. Используя цикл переверните лист.
