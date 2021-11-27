@@ -50,7 +50,8 @@ index = 0
 while index < len(list_1):
     index += 1
     while (len(list_1)) % 7 == 0 and (len(list_1)) % 5 != 0:
-        list_2.append(len(list_1)+1)
+        list_2.append(len(list_1))
+        print(list_2)
 #######################################
 list_1 = []
 x = 0
