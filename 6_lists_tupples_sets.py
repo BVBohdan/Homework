@@ -10,11 +10,11 @@ print(f"Cписок: {new_list}. Максимальное число: {max_numbe
 from random import randint
 new_list = [randint(0,100) for int in range(10)]
 i = 0
-max_number = new_list[1]
+max_number = new_list[i+1]
 while i < len(new_list):
     i +=1
-    if new_list[1] > max_number:
-        max_number = new_list[1]
+    if new_list[i+1] < max_number:
+        max_number = new_list[i+1]
     print(f"Cписок: {new_list}. Максимальное число: {max_number}")
     break
 
@@ -36,32 +36,14 @@ print('Cписок 1:', list_1, 'Cписок 2:', list_2, 'Общий списо
 # but not a multiple of 5, and store them in a separate list. Finally, print the list.
 # Constraint: use only while loop for iteration
 ######################################
-list_1 = list(range(1, 101))
-list_2 = []
-while True:
-    if (list_1[76]) % 7 == 0 and (list_1[76]) % 5 != 0:
-        list_2.append(list_1[76])
-        print(list_2)
-        break
-######################################
-list_1 = list(range(1, 101))
-list_2 = []
-index = 0
-while index < len(list_1):
-    index += 1
-    while (len(list_1)) % 7 == 0 and (len(list_1)) % 5 != 0:
-        list_2.append(len(list_1))
-        print(list_2)
-#######################################
 list_1 = []
 x = 0
 while x <= 100:
     x += 1
     if x % 5 != 0 and x % 7 == 0:
         list_1.append(x)
-        print(list_1)
+print(list_1)
 #######################################
-
 # Task 4. Реверс. Создайте лист длинной 10 с подряд идущими значениями. Используя цикл переверните лист.
 # (для этого надо поменять первый с последним, второй с предпоследним и так далее)
 from random import randint
