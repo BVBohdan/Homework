@@ -1,13 +1,10 @@
 # Task 1. Make a program that has some sentence (a string) on input and returns a dict containing all unique words
 # as keys and the number of occurrences as values.
 
-sentence = ('table, spoon, tv, bed, spoon, table, chair, receiver, freezer, chair, table, receiver')
-sentence_2 = sentence.split(',')
-sentence_2.sort()
-print(sentence_2)
-new_dict = dict((i, sentence_2.count(i)) for i in sentence_2)
+sentence = 'table spoon tv bed spoon table chair receiver freezer chair table receiver'
+sentence_2 = [w.strip() for w in sentence.split(' ')]
+new_dict = dict((i, sentence_2.count(i)) for i in set(sentence_2))
 print(new_dict)
-#При выводе на экран программа не подсчитывает в сумму первый ключ. Он остаётся как отдельный
 
 
 # Task 2. Create a function which takes as input two dicts with structure mentioned above,
@@ -26,11 +23,11 @@ print(new_dict)
 stock = {"banana": 6, "apple": 0, "orange": 32, "pear": 15}
 prices = {"banana": 4, "apple": 2, "orange": 1.5, "pear": 3}
 def dict_mul(stock, prices):
-    total = dict()
+    c = dict()
     for k in stock:
         if k in prices:
-            total[k] = stock[k] * prices[k]
-    return total
+            c[k] = stock[k] * prices[k]
+    return c
 print(dict_mul(stock, prices))
 
 
@@ -40,12 +37,15 @@ print(dict_mul(stock, prices))
 list_1 = []
 list_2 = []
 list_3 = []
+i = list(range(1, 11))
 list_1.extend(i)
 list_3.extend(list_1)
-i = list(range(1, 11))
 j = 0
 while j < 11:
     j += i[0]
     list_2.append(j**2)
 list_3.extend(list_2)
 print(list_3)
+
+list_1 = [(i, i**2) for i in range (1,11)]
+print(list_1)
