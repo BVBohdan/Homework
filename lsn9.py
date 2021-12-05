@@ -59,7 +59,7 @@ def two_numbers(a,b):
         return c
     except ValueError:
         print('values given by the input are not numbers')
-    except Devive_by_Zero_Error:
+    except ZeroDivisionError:
         print("You can't divide by zero")
 rez = two_numbers(a,b)
 if rez != None:
