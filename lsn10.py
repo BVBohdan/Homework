@@ -38,16 +38,38 @@ shutil.move('myfile.txt', 'new_myfile')
 # After the user exits, all data should be saved to loaded JSON.
 
 
-def creating_contact(phone, **kwargs):
-    pass
+def creating_contact(phone, *wargs):
+    new_contact = dict(phone='-', name='-', initials='-', city='-', country='-')
+    new_contact['phone'] = input('Input phone number')
+    new_contact['name'] = input('Input name')
+    initial = new_contact.get('name')
+    new_contact['initials'] = initial[0]
+    new_contact['city'] = input('Input city')
+    new_contact['country'] = input('Input country')
+    return new_contact
 
 def adding_contact():
-    my_file = open('Phonebook.txt', 'w+')
-    my_file.write(phone, )
-    pass
+    phonebook_file = open('Phonebook.json', 'w+')
+    phonebook_file.write(creating_contact())
+    phonebook_file.close()
 
 def searching_contact():
-    pass
+    f = True
+    name_id = input('Input name:')
+    for i in new_contact:
+        if new_contact.get('name').upper() == name_id.upper():
+            print(new_contact.get('phone'), new_contact.get('name'), new_contact.get('initials'),
+                  new_contact.get('city'), new_contact.get('country'))
+            f = False
+    if f:
+        print('Name did not found')
 
 def delete_contact():
-    pass
+    f = True
+    name_id = input('Input name:')
+    for i in new_contact:
+        if new_contact.get('name').upper() == name_id.upper():
+            new_contact.pop('name')
+            f = False
+    if f:
+        print('Name did not found')
