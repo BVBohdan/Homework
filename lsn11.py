@@ -54,18 +54,18 @@ class TVController:
     def last_channel(self):
         self.active_channel = self.channels.index(-1)
 
-    def turn_channel(self, N):
+    def turn_channel(self, n):
         try:
             self.active_channel = self.channels.index(n-1)
         except IndexError:
             print('You chose wrong channel')
 
     # Второй вариант переключения канала
-    # def turn_channel(self, N):
-    #     if self.channel(N) <= len(self.channels):
-    #         self.active_channel = N
-    #     if self.channel(N) > len(self.channels):
-    #         self.active_channel = N % self.channels
+    # def turn_channel(self, n):
+    #     if self.channel(n) <= len(self.channels):
+    #         self.active_channel = n
+    #     if self.channel(n) > len(self.channels):
+    #         self.active_channel = n % self.channels
 
     def next_channel(self):
         if self.channels.index(self.active_channel) == len(self.active_channel) - 1:
