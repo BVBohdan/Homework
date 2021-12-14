@@ -1,3 +1,5 @@
+#Дополнительное задание доделаю, только сегодня забрал ноут с ремонта. Не успел еще к сожалению
+
 # Task 1. A Person class.
 # Make a class called Person. Make the __init__() method take firstname, lastname, and age as parameters
 # and add them as attributes. Make another method called talk() which makes prints a greeting from the person
