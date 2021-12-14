@@ -55,6 +55,7 @@ def creating_contact(new_contacts):
     new_contact['initials'] = initial_n[0] + initial_ln[0]
     new_contact['city'] = input('Input city')
     new_contact['country'] = input('Input country')
+    new_contacts.append(new_contact)
     adding_contact(new_contact)
     return new_contact
 
