@@ -42,3 +42,61 @@ class Dog:
 CHANNELS = ['BBC', 'Discovery', 'TV1000']
 
 class TVController:
+    def __init__(self, channels):
+        self.channels = channels
+        self.active_channel = self.channels.index(0)
+
+    def first_channel(self):
+        self.active_channel = self.channels.index(0)
+
+    def last_channel(self):
+        self.active_channel = self.channels.index(-1)
+
+    def turn_channel(self, N):
+        try:
+            self.active_channel = self.channels.index(n-1)
+        except IndexError:
+            print('You chose wrong channel')
+
+    # Второй вариант переключения канала
+    # def turn_channel(self, N):
+    #     if self.channel(N) <= len(self.channels):
+    #         self.active_channel = N
+    #     if self.channel(N) > len(self.channels):
+    #         self.active_channel = N % self.channels
+
+    def next_channel(self):
+        if self.channels.index(self.active_channel) == len(self.active_channel) - 1:
+            self.active_channel = self.channels.index(0)
+        else:
+            self.active_channel = self.channels[self.channels.index(self.active_channel) + 1]
+
+    def previous_channel(self):
+        if self.channels.index(self.active_channel) == 0:
+            self.active_channel = self.channels.index(-1)
+        else:
+            self.active_channel = self.channels[self.channels.index(self.active_channel) - 1]
+
+    def current_channel(self):
+        return self.active_channel
+
+    def is_exit(self, number):
+        for n, name in enumerate(self.channels):
+            if n == number + 1 or n == name:
+                return 'YES'
+            return 'NO'
+
+    controller = TVController(CHANNELS)
+    controller.first_channel() = "BBC"
+    controller.last_channel() = "TV1000"
+    controller.turn_channel(1) = "BBC"
+    controller.next_channel() = "Discovery"
+    controller.previous_channel() = "BBC"
+    controller.current_channel() = "BBC"
+    controller.is_exist(4) = "No"
+    controller.is_exist("BBC") = "Yes"
+
+# Additional Task 1. Создайте класс Friend для хранения имени name и телефона phone.
+# Обратите внимание, у друга может не быть телефона.
+class Friend:
+    def __init__(self, *information):
