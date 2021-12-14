@@ -82,7 +82,7 @@ class TVController:
     def current_channel(self):
         return self.active_channel
 
-    def is_exit(self, number):
+    def is_exist(self, number):
         for n, name in enumerate(self.channels):
             if n == number + 1 or n == name:
                 return 'YES'
