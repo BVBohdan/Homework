@@ -14,7 +14,7 @@ class Person:
         print(f'Hello, my name is {self.firstname} {self.lastname} and I’m {self.age} years old. '
               f'Ah sh*t, here we go again')
 
-name = Person('Carl', 'Jhonson', '26')
+name = Person('Carl', 'Johnson', '26')
 name.talk()
 
 # Task 2. Doggy age.
