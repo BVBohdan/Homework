@@ -22,8 +22,6 @@ my_file = open('myfile.txt')
 shutil.move('myfile.txt', 'new_myfile')
 
 
-
-
 # Task 2. Extend Phonebook application
 # Functionality of Phonebook application:
 # Add new entries
@@ -40,23 +38,32 @@ shutil.move('myfile.txt', 'new_myfile')
 # if it is present in the folder with application, else raise an error.
 # After the user exits, all data should be saved to loaded JSON.
 
+import json
 
-def creating_contact(phone, *wargs):
-    new_contact = dict(phone='-', name='-', initials='-', city='-', country='-')
+def print_contacts(all_contacts):
+    for i in all_contacts:
+        print(i['name'], i['phone'], i['initials'], i['city'], i['country'], sep='\n')
+
+
+def creating_contact(new_contacts):
+    new_contact = dict(phone='-', name='-', last_name='-', initials='-', city='-', country='-')
     new_contact['phone'] = input('Input phone number')
     new_contact['name'] = input('Input name')
-    initial = new_contact.get('name')
-    new_contact['initials'] = initial[0]
+    new_contact['last_name'] = input('Input last_name')
+    initial_n = new_contact.get('name')
+    initial_ln = new_contact.get('last_name')
+    new_contact['initials'] = initial_n[0] + initial_ln[0]
     new_contact['city'] = input('Input city')
     new_contact['country'] = input('Input country')
+    adding_contact(new_contact)
     return new_contact
 
-def adding_contact():
+def adding_contact(add_new_contact):
     phonebook_file = open('Phonebook.json', 'w+')
-    phonebook_file.write(creating_contact())
+    phonebook_file.write()
     phonebook_file.close()
 
-def searching_contact():
+def searching_contact_name(search_contact):
     f = True
     name_id = input('Input name:')
     for i in new_contact:
@@ -65,7 +72,18 @@ def searching_contact():
                   new_contact.get('city'), new_contact.get('country'))
             f = False
     if f:
-        print('Name did not found')
+        print('Required contact did not found')
+
+def searching_contact_phone():
+    f = True
+    phone_id = input('Input phone:')
+    for i in new_contact:
+        if new_contact.get('phone') == phone_id:
+            print(new_contact.get('phone'), new_contact.get('name'), new_contact.get('initials'),
+                  new_contact.get('city'), new_contact.get('country'))
+            f = False
+    if f:
+        print('Required contact did not found')
 
 def delete_contact():
     f = True
@@ -75,4 +93,11 @@ def delete_contact():
             new_contact.pop('name')
             f = False
     if f:
-        print('Name did not found')
+        print('Required contact did not found')
+
+
+
+
+
+
+
