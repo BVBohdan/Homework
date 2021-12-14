@@ -1,6 +1,4 @@
-#
-# Домашка ещё не закончена. Прошу повременить с выставлением оценки :)
-#
+
 # Task 1. Files
 # Write a script that creates a new output file called myfile.txt and writes the string "Hello file world!" in it.
 # Then write another script that opens myfile.txt, and reads and prints its contents.
