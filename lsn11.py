@@ -89,14 +89,14 @@ class TVController:
             return 'NO'
 
 controller = TVController(CHANNELS)
-assert controller.first_channel() = "BBC"
-assert controller.last_channel() = "TV1000"
-assert controller.turn_channel(1) = "BBC"
-assert controller.next_channel() = "Discovery"
-assert controller.previous_channel() = "BBC"
-assert controller.current_channel() = "BBC"
-assert controller.is_exist(4) = "No"
-assert controller.is_exist("BBC") = "Yes"
+assert controller.first_channel() == "BBC"
+assert controller.last_channel() == "TV1000"
+assert controller.turn_channel(1) == "BBC"
+assert controller.next_channel() == "Discovery"
+assert controller.previous_channel() == "BBC"
+assert controller.current_channel() == "BBC"
+assert controller.is_exist(4) == "No"
+assert controller.is_exist("BBC") == "Yes"
 
 # Additional Task 1. Создайте класс Friend для хранения имени name и телефона phone.
 # Обратите внимание, у друга может не быть телефона.
