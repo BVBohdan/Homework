@@ -88,7 +88,41 @@ class ProductStore:
     def add(self, product, amount):
         self.products.append(product)
         product.amount = amount
+        print('Product successfully added')
 
+    def setting_discount(selfself, id, percent):
+        for product in self.products:
+            if product.name == id or type = product.discount = percent
+            product.price = product.price - (product.price*percent/100)
+        print(f'Discount {percent} successfully added')
+
+    def sell(self, product_name, amount):
+        for product in self.products:
+            if product.name == product_name and product.amount >= amount:
+                product.amount -= amount
+                print('Product was successfully sold')
+
+    def get_income(self):
+        return len(self.products)
+
+    def get_all_products(self):
+        products=[]
+        for product in self.products:
+            products.append(
+                {
+                    'type': product.type,
+                 'name': product.name,
+                 'price': product.price,
+                 'amount': product.amount,
+                 'discount': product.discount
+                }
+            )
+        return products
+
+    def get_product_info(self, product_name):
+        for product in self.products:
+            if product_name == product_name:
+                return product.name, product.amount
 
 p = Product('Sport', 'Football T-Shirt', 100)
 p2 = Product(Food, 'Ramen, 1.5)
